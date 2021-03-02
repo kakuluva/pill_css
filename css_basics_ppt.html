@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS Basics 1</title>
+        <!-- INTERNAL CSS  -->
+        <!-- h1 would be "selector", color the "property" and black the "value" -->
+        <!-- The 3 things make a "Declaration block"  -->
+        <style>
+            h1 {
+                color:red;
+                margin-left: 40px;
+            }
+            .class1{
+                font-family: Arial, Helvetica, sans-serif;
+                color: crimson;
+            }
+            .box{width: 500px;
+            height: 400px;
+            border: 5px solid black;
+            margin: 20px auto;
+            position: relative;
+          /*  Its important to have the container to relative, because other stuff
+            can go relative to that */
+            }
+            .item1,.item2,.item3{
+                height: 150px;
+                width: 150px;
+            }
+            .item1{
+                background-color: blueviolet;
+                position: absolute;
+                top: 0px;
+                right: 0px;}
+            /* <!-- El position relative enables 4 different properties: top, bottom, left and right  -->
+            <!-- We can move it relative to its original position  --> */
+            
+            .item2{
+                background-color: brown;
+                position: relative;
+            }
+            .item3{
+                background-color: chartreuse;
+                position: fixed;
+                top: 0px;
+                right: 0px;
+                                          /* Fixed takes relationship to the borders of the viewport
+                          And it is fixed to a place, useful for bars  */
+
+            }
+            h3{color:burlywood;background-color: cornsilk;}
+            nav{
+                background-color: gray;
+                color: white;
+                position: sticky;
+                top: 0px;
+                /* Useful for navbars */
+            }
+        </style>
+        <!-- EXTERNAL CSS -- MOST RECOMMENDED  -->
+        <link rel="stylesheet" type="text/css" href="assets/mystyle.css">
+        
+    </head>
+    <body>
+        <h1>Prueba</h1>
+        <!-- INLINE CSS  -->
+        <h1 style="color:blue; text-align:center">
+            Prueba
+        <!-- With the same header type, different result  -->
+        <!-- It is also possible to combine al the implementation ways  -->
+        </h1>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+        <p class="class">
+            <h3>
+                Cascading Order
+            </h3>
+            All the styles in a page will "cascade" into a new "virtual" style sheet with this priority:
+            <ol>
+                <li>Inline style (inside an HTML element)</li>
+                <li>External and internal style sheets (head section)</li>
+                <li>Browser default</li>
+            </ol>
+        </p>
+        <p class="class1">
+            <h3 class="class1">Attribute Selectors</h3>
+            The CSS Attribute Selector is used to select an element with some specific attribute or attribute
+            value. It is an excellent way to style the HTML elements by grouping them based on some specific attributes and the attribute selector will select those elements with similar attributes. <br>
+            button[disabled] will target button elements that are disabled <br>
+            input[type="submit"] Target input elements if they have a type attribute with an exact value of submit <br>
+            a[href^="http://"] Target &lt;a&gt; elements that a href value that starts with http:// <br>
+            a[href$=".de"] Target &lt;a&gt; elements that a href value that ends with .de <br>
+            a[href*="twitter"] Target &lt;a&gt; elements that a href value that contains the word "twitter"
+        </p>
+        <p>
+            <h3>Pseudo-classes</h3>
+            Are used to define a special state of an element. For example:
+            <ul>
+                <li>When user mouses over it</li>
+                <li>Style visited and unvisited links differently</li>
+                <li>When an element gets focus</li>
+            </ul>
+            How to refer:
+            Example en list items: "li:first-child" o "li:nth-child(2)" o "li:last-child". <br>
+            Other option: "div div:first-of-type" o "div div:last-of-type"
+        </p>
+        <p>
+            <h3>Media Link Attribute</h3>
+            To use it insert this code in head: <br>
+            <code>
+                &lt;link rel="stylesheet" type="text/css" href="print.css" media="print"&gt;
+            </code>
+            The media attribute specifies what media/device the target resource is optimized for. There are lots of values.
+        </p>
+        <p>
+            <h3>font-family</h3>
+            The font-family property defines a list
+            of fonts or font families, with an order of priority, to use in a selected item.
+            Unlike most CSS properties, values are separated by commas (",") to
+            indicate that they are alternative   values. Example: <br>
+            <code>
+                .p1 { <br>
+                    font-family: Arial, Helvetica, sans-serif; <br>
+
+                }
+            </code>
+        </p>
+        <div class="box">
+            <div class="item1"></div>
+            <div class="item2"></div>
+            <div class="item3"></div>
+        </div>
+
+    </body>
+</html>
+<!--  -->

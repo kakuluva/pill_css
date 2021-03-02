@@ -1,0 +1,172 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics - 2</title>
+    <style>
+    .radius{border-radius:10px;
+    border-style:solid;
+    border-width: 5px;
+    border-color: blue;}
+    .gradients{
+        background:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+        border-radius: 5px;
+        color: white;
+    }
+    .shadows{
+        text-align: left;
+        /* horizontal, vertical, blur, color */
+        text-shadow: 10px 5px 5px red;
+    }
+    .boxshadows{
+/* horizontal | vertical | blur | spread, horizontal | vertical | blur | spread, ... */
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+    div.a{
+        transform: rotate(3deg);
+    }
+    div.b{
+        transform: scaleX(1.2)translate(100px);
+    }
+    div.trans{
+        width: 100px;
+        height: 100px;
+        background: red;
+        transition: width 2s, height 4s;
+    }
+    div.trans:hover{
+        width: 300px;
+        height: 300px;
+    }
+    div.anim{
+        width: 100px;
+        height: 100px;
+        background: red;
+        animation-duration: 3s;
+        animation-name: slidein;
+    }
+    div.anim1{
+        width: 100px;
+        height: 100px;
+        background: red;
+        animation-duration: 3s;
+        animation-name: slidein;
+        animation-iteration-count: infinite;
+    }
+    @keyframes slidein {
+        from {
+            margin-left: 100%;
+            width: 300%;
+        }
+        to {
+            margin-left: 0%;
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="radius">
+        <h3>Rounded Corners</h3>
+        <p>
+            The property is called: border-radius. If it is only one value, it'll be the same for al four borders.
+            If there are multiple values, each one is for a border.
+        </p>
+    </div>
+    <div class="gradients">
+        <h3>Gradients</h3>
+        <p>
+            CSS gradients let you display smooth transitions between two or more specified colors.
+        </p>
+    </div>
+    <div class="shadows">
+        <h3>Text Shadows</h3>
+        <p>
+            The CSS text-shadow property applies shadow to text. You can specify the horizontal
+    shadow (2px), the vertical shadow (2px), a blur for the shadow and one or more colors.
+        </p>
+    </div>
+    <div class="boxshadows">
+        <h3>Box Shadows</h3>
+        <p>
+            The CSS box-shadow property applies shadow to elements. In its simplest use, you only
+            specify the horizontal shadow and the vertical shadow.
+        </p>
+    </div>
+    <div>
+        <h3>Web Fonts</h3>
+        <p>
+            Web fonts allow Web designers to use
+            fonts that are not installed on the
+            user's computer.
+        </p>
+    </div>
+    <div class="a">
+        <h3>2D Transforms</h3>
+        <p>
+            CSS transforms allow you to move,
+            rotate, scale, and skew elements.
+        </p>
+    </div>
+    <div class="b">
+        <h3>3D Transforms</h3>
+        <p>
+            CSS also supports 3D transformations.
+        </p>
+    </div>
+    <div>
+        <h3>Transitions</h3>
+        <p>
+            CSS transitions allows you to change
+            property values smoothly, over a given
+            duration.
+            To create a transition effect, you must
+            specify two things:
+            <ul>
+                <li>the CSS property you want to add an effect to</li>
+                <li>the duration of the effect</li>
+            </ul>
+        </p>
+    </div>
+    <div class="trans"></div>
+    <div>
+        <h3>Animations</h3>
+        <p>
+            CSS animations make it possible to
+            animate transitions from one CSS style
+            configuration to another. <br>
+            Animations consist of two components:
+            <ul>
+                <li>a style describing the CSS animation</li>
+                <li>and a set of keyframes that indicate
+                    the start and end states of the
+                    animation’s style, as well as possible
+                    intermediate waypoints.</li>
+            </ul>
+            <h4>The @keyframes Rule</h4>
+            When you specify CSS styles inside the
+            @keyframes rule, the animation will
+            gradually change from the current style to
+            the new style at certain times. <br>
+            It is also possible to use percent. By using
+            percent, you can add as many style
+            changes as you like.
+        </p>
+    </div>
+    <div class="anim"></div>
+    <div>
+        <h4>Repeating Animations</h4>
+        To make the animation repeat itself, simply
+        use the animation-iteration-count
+        property to indicate how many times to
+        repeat the animation.
+        In this case, let’s use infinite to have the
+        animation repeat indefinitely:
+    </div>
+    <div class="anim1"></div>
+</body>
+</html>
+<!-- IMPORTANTE: Podemos usar también referencias a los id's como <p id="para1"> -->
+    <!-- Pero en la definición hay que poner #para1{} -->
+    <!-- Los ids no se pueden usar muchas veces -->
